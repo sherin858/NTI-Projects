@@ -1,0 +1,33 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/add" class="btn btn-primary mx-3">Add New User</a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each data}}
+                <tr>
+                    <td>{{this.id}}</td>
+                    <td>{{this.name}}</td>
+                    <td>
+                        <a class="btn btn-primary" href="/show/{{this.id}}">Show</a>
+                        <a class="btn btn-warning" href="/edit/{{this.id}}">Edit</a>
+                        <a class="btn btn-danger " href="/delete/{{this.id}}">Delete</a>
+                        <a class="btn btn-warning" href="/addwithdraw/{{this.id}}">Add/Withdraw</a>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</section>
+{{>footer}}

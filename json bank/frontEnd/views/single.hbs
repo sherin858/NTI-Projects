@@ -1,0 +1,35 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/add" class="btn btn-primary mx-3">Add New User</a>
+        <a href="/addPost" class="btn btn-primary mx-3">Add New User(Post)</a>
+    </div>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>Actions</th>
+                    <th>address</th>
+                    <th>initial balance</th>
+                    <th>age</th>
+                    <th>transactions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{data.id}}</td>
+                    <td>{{data.name}}</td>
+                    <td>{{data.email}}</td>
+                    <td>{{data.address}}</td>
+                    <td>{{data.initialbalance}}</td>
+                    <td>{{data.age}}</td>
+                    <td>{{data.transactions}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+{{>footer}}

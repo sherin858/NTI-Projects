@@ -1,0 +1,13 @@
+{{>header}}
+{{>navbar}}
+<section class="container my-3">
+    <h2>add or withdraw</h2>
+    <form method="post">
+        <div class="mb-3">
+            <input class="form-control" name="money" placeholder="Enter amount of money" type="number" >
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" formaction="/addmoney/{{id}}">Add</button>
+        <button type="submit" class="btn btn-primary btn-lg" formaction="/withdrawmoney/{{id}}">withdraw</button>
+    </form>
+</section>
+{{>footer}}
