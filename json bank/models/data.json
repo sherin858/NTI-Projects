@@ -1,1 +1,1 @@
-[{"id":1,"name":"sherin reda","age":"24","email":"sherin.reda15@gmail.com","address":"64 شارع الشيخ عبد الحميد المتفرع من شارع الجلاء فيكتوريا","initialbalance":"2000","transactions":["+1000","-1000","-1000"]}]
+[{"id":1,"name":"sherin","age":"24","email":"sherin.reda15@gmail.com","address":"alexandria","initialbalance":"2000"},{"id":2,"name":"maram","age":"20","email":"maram@gmail.com","address":"alexandria","initialbalance":"5000"},{"id":3,"name":"othman","age":"30","email":"othman@yahoo.com","address":"alexandria","initialbalance":"8000"}]

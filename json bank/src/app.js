@@ -17,5 +17,6 @@ hbs.registerPartials(path.join(__dirname,"../frontEnd/layout"));
 const router=require("../app/routes/routter");
 app.use(router);
 
+app.get("*",(req,res)=>{res.render("err404"), {pageTitle: "error Page"}});
 
 module.exports = app

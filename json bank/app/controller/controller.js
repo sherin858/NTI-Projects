@@ -28,7 +28,6 @@ const searchById=(id)=>{
     data.forEach((el,i)=>{
         if(el.id==id){data= data[i];index=i}
     })
-    // console.log(data)
     return {data,index}
 }
 const transactions=(sign,data,element,req,res)=>{
@@ -65,16 +64,15 @@ class control{
         res.render("home",allData);
     }
     static showSingle=(req,res)=>{
-        let id=req.params.id;//tobechanged
-        let allData={pageTitle:"userData"};
-        let data=readFromJSON();
-        let singleUser=data.find((el)=>el.id==id)
-        allData.data=singleUser;
-        res.render("single",allData)
+        let id=req.params.id;
+        let changed=searchById(id)
+        if(!(changed.index>=0))return res.redirect("/err")
+        res.render("single",{data:changed.data ,pageTitle:"userData"})
     }
     static edit=(req,res)=>{
         let id=req.params.id;
         let data=searchById(id);
+        if(!(data.index>=0))return res.redirect("/err")
         res.render("edit",{
             pageTitle:"edit user",
             user:data.data
@@ -130,13 +128,18 @@ class control{
     static delete=(req,res)=>{
         let data=readFromJSON();
         let changed=searchById(req.params.id)
+        console.log(changed);
+        if(!(changed.index>=0))return res.redirect("/err")
         data.splice(changed.index,1);
         writeDataToJSON(data);
         res.redirect("/")
     }
     static addwithdraw=(req,res)=>{
         let id=req.params.id;
-        res.render("addwithdraw",{id})
+        let changed=searchById(id)
+        console.log(changed)
+        if(!(changed.index>=0)){res.redirect("/err")} 
+        else{res.render("addwithdraw",{id})}
     }
     static Withdraw=(req,res)=>{
         let id=req.params.id;
