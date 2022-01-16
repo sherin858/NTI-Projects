@@ -10,6 +10,8 @@ const validateData=(incomingData)=>{
     if(!ValiadtorController.isValidEmail(incomingData.email))errors.email="not valid email"
     if(!ValiadtorController.validInitialBalance(incomingData.initialbalance))errors.initialbalance="add money starting form 1000EG"
     if(!ValiadtorController.validAge(incomingData.age))errors.age="not valid age"
+    if(!ValiadtorController.isEmptyString(incomingData.address))errors.address="enter address"
+    if(!ValiadtorController.validmobile(incomingData.mobile))errors.mobile="not a mobile number"
     return errors
 }
 const transactions=(sign,req)=>{

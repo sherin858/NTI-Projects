@@ -12,5 +12,8 @@ class ValiadtorController{
     static validAge=(age)=>{
         return parseInt(age)>=18
     }
+    static validmobile=(mobile)=>{
+        return validator.isMobilePhone(mobile);
+    }
 }
 module.exports = ValiadtorController
