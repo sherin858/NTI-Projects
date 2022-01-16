@@ -2,7 +2,6 @@ const chalk=require("chalk");
 const res = require("express/lib/response");
 const fs=require("fs");
 const validate= require("./validate");
-// const { all } = require("proxy-addr");
 const readFromJSON = () =>{
     let data
     try{
@@ -54,6 +53,8 @@ const validateData=(incomingData)=>{
     if(!validate.isValidEmail(incomingData.email))errors.email="not valid email"
     if(!validate.validInitialBalance(incomingData.initialbalance))errors.initialbalance="add money starting form 1000EG"
     if(!validate.validAge(incomingData.age))errors.age="not valid age"
+    if(!validate.validmobile(incomingData.mobile))errors.mobile="not a mobile number"
+    if(!validate.isEmptyString(incomingData.address))errors.address="enter address"
     return errors
 }
 
